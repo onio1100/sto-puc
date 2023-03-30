@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import "../styles/App.css";
-import Nav from "../components/Nav";
-import Grid from "../components/Grid";
-import Footer from "../components/Footer";
+import Nav from "./Nav";
+import Grid from "./Grid";
+import Checkout from './Checkout';
+import Footer from "./Footer";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -14,6 +15,11 @@ export default function App() {
     .then(json=> {setItems(json)}) 
   },[])
 
+  function click(state){
+      setPage(state);
+  }
+
+
   function contentControler(){
     let component;
     switch (page) {
@@ -24,7 +30,7 @@ export default function App() {
         component = <Detail />;
         break;
       case "checkout":
-        component = <Checkout />;
+        component = <Checkout handle={() => click("grid")} />;
         break;
       default:
         component = <Grid productList={items}/>;
@@ -35,7 +41,7 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Nav />
+      <Nav handle={() => click("checkout")}/>
       <main>
         {contentControler()}
       </main>

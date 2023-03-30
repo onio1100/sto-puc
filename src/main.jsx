@@ -15,9 +15,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 // 1.strona główna 
 // -baner z informacjami o nowej kolekcji albo coś takiego
 // -bar z filtrami kategori, sortowanie po cenie i ocenach plus domyślne, ???pole do szukanie??? 
-// -siatka produktów (dane o produktach będą pobierane z tego api https://fakestoreapi.com/docs)
-// ??? dodatkowe informacje o produktach w naszym sklepie                                                                <-----|
-//  tego api https://fakestoreapi.com/docs                                                                                     |
+// -siatka produktów zmiana planów użyjemy po porstu pliku json i paru zdjęć z pexela albo innego miejsca
+// ??? dodatkowe informacje o produktach w naszym sklepie                                                                <-----|                                                                               |
 // 2. strona ze szczegułami o produkcie                                                                                        |
 // pod informacjami o produkcie mogą wyświetlać się banery odnoszące się ogólnie do produktów na naszej stronie te same co  tu |
 // 3. checkout gdzie masz liste elementów w koszyku i podajesz swoje dane
