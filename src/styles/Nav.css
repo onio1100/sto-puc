@@ -9,6 +9,7 @@ nav{
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid var(--detail-dark);
+    cursor: pointer;
 }
 .nav__logo{
     font-family: 'Dosis', sans-serif;

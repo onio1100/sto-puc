@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import "../styles/App.css";
 import Nav from "./Nav";
-import Grid from "./Grid";
+import ProductsGrid from "./ProductsGrid";
+import ProductPage from './ProductPage';
 import Checkout from './Checkout';
 import Footer from "./Footer";
 
 export default function App() {
   const [items, setItems] = useState([]);
-  const [page, setPage] = useState("grid");
+  const [page, setPage] = useState("productsGrid");
+  const [selectedItem, setSelectedItem] = useState(false);
+  const [cartContent, setCartContent] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -15,25 +18,25 @@ export default function App() {
     .then(json=> {setItems(json)}) 
   },[])
 
-  function click(state){
-      setPage(state);
+  function openProductPage(product){
+    setPage("productPage");
+    setSelectedItem(product);
   }
-
 
   function contentControler(){
     let component;
     switch (page) {
-      case "grid":
-        component = <Grid productList={items}/>;
+      case "productsGrid":
+        component = <ProductsGrid productList={items} handleOPP={openProductPage}/>;
         break;
-      case "detail":
-        component = <Detail />;
+      case "productPage":
+        component = <ProductPage product={selectedItem}/>;
         break;
       case "checkout":
-        component = <Checkout handle={() => click("grid")} />;
+        component = <Checkout handle={() => setPage("productsGrid")} />;
         break;
       default:
-        component = <Grid productList={items}/>;
+        component = <ProductsGrid productList={items} handleOPP={openProductPage}/>;
         break;
     }
     return component;
@@ -41,7 +44,7 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Nav handle={() => click("checkout")}/>
+      <Nav handle={() => setPage("checkout")}/>
       <main>
         {contentControler()}
       </main>

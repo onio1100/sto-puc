@@ -1,6 +1,6 @@
 footer{
     height: 600px;
     width: 100%;
-    background: var(--background);
-    border-top: 2px solid var(--deatail-dark);
+    background: var(--detail-light);
+    border-top: 2px solid var(--detail-dark);
 }

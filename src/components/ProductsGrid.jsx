@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "../styles/Grid.css";
 
-export default function Grid(props) {
+export default function ProductsGrid(props) {
     const [filters, setFilters] = useState({
         category: "all",
-        sorting: ["popular"] //popular, price, reviews | low , high
+        sorting: ["popular","low"] //popular, price, reviews | low , high
      })
 
     function inputsControl(e){
@@ -23,57 +23,22 @@ export default function Grid(props) {
         let sortingCriteria = filters.sorting[0];
         let sortingOrder = filters.sorting[1];
         
-        // Filtruj produkty na podstawie wybranej kategorii lub zwróć całą listę
         let filteredProducts = productList.filter((product) => {
           return categoryFilter === "all" || product.category === categoryFilter;
         });
         
-        // Sortuj produkty na podstawie wybranej kategorii lub popularności
         if (sortingCriteria !== "popular") {
           let sortingKey = sortingCriteria === "price" ? "price" : "rating.rate";
           filteredProducts.sort((a, b) => a[sortingKey] - b[sortingKey]);
-          if (sortingOrder === "high") {
+          if (sortingOrder === "desc") {
             filteredProducts.reverse();
           }
         }
         
-        // Zwróć posortowane i przefiltrowane produkty w postaci siatki komponentów ProductTile
-        return filteredProducts.map((product, index) => (
-          <ProductTile product={product} key={index} />
+        return filteredProducts.map((product) => (
+          <ProductTile product={product} key={product.id}  handleOPP={props.handleOPP}/>
         ));
       }
-
-    function creatGrid(){
-        let arr = [];
-
-        if(filters.category == "all"){
-            arr = [...props.productList];
-        } else {
-            props.productList.forEach((product) => {
-                if(product.category == filters.category){
-                    arr.push(product);
-                }});
-        }
-
-        if(filters.sorting[0] != "popular"){
-            let sortingKey;
-
-            if(filters.sorting[0] == "price"){
-                sortingKey = "price";
-            } else {
-                sortingKey = "rating.rate";
-            }
-
-            arr = arr.sort((a, b) => (a[sortingKey] - b[sortingKey]))
-
-            if(filters.sorting[1] == "high"){
-                arr = arr.reverse();
-            }
-        }
-        return arr.map((product, id) => (
-            <ProductTile product={product} key={id} />
-        ))
-    }
 
     return(
         <div className="item-list">
@@ -99,11 +64,11 @@ export default function Grid(props) {
                         value={JSON.stringify(filters.sorting)}
                         onChange={inputsControl}
                         name="sorting">
-                    <option value={JSON.stringify(["popular"])} >most popular</option>
-                    <option value={JSON.stringify(["price", "low"])} >price: low to high</option>
-                    <option value={JSON.stringify(["price", "high"])} >price: high to low</option>
-                    <option value={JSON.stringify(["reviews", "low"])} >reviews: low to high</option>
-                    <option value={JSON.stringify(["reviews", "high"])} >reviews: high to low</option>
+                    <option value={JSON.stringify(["popular", "asc"])} >most popular</option>
+                    <option value={JSON.stringify(["price", "asc"])} >price: low to high</option>
+                    <option value={JSON.stringify(["price", "desc"])} >price: high to low</option>
+                    <option value={JSON.stringify(["reviews", "asc"])} >reviews: low to high</option>
+                    <option value={JSON.stringify(["reviews", "desc"])} >reviews: high to low</option>
                 </select>
 
             </div>
@@ -115,7 +80,8 @@ export default function Grid(props) {
 }
 
 function ProductTile(props){
+
     return(
-        <img src={props.product.image} alt="item" className="test"></img>
+        <img src={props.product.image} alt="item" className="test" onClick={() => props.handleOPP(props.product)}></img>
     )
 }
