@@ -43,7 +43,7 @@ export default function ProductsGrid(props) {
 
     if(selectedProduct){
         return( 
-            <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} />
+            <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} handleCart={props.handleCart} />
         )
     } else {
         return (

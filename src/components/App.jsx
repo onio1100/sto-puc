@@ -16,31 +16,45 @@ export default function App() {
     .then(json=> {setItems(json)}) 
   },[])
 
-  // function contentControler(){
-  //   let component;
-  //   switch (page) {
-  //     case "productsGrid":
-  //       component = <ProductsGrid productList={items} handleOPP={openProductPage}/>;
-  //       break;
-  //     case "productPage":
-  //       component = <ProductPage product={selectedItem} />;
-  //       break;
-  //     case "checkout":
-  //       component = 
-  //       break;
-  //     default:
-  //       component = <ProductsGrid productList={items} handleOPP={openProductPage}/>;
-  //       break;
-  //   }
-  //   return component;
-  // }
+  function cartControler(product, quantity = 1, remove = false ){
+    let productId = product.id;
+    let productIndex = cartContent.findIndex((cartItem) => cartItem.product.id === productId);
+
+    if(!remove){
+      if(productIndex === -1){
+        setCartContent((prevCartContnet) => {
+          let newCartItem = {
+            product: product,
+            quantity: quantity
+          }
+          return [...prevCartContnet, newCartItem];
+        })} 
+      else{
+        setCartContent((prevCartContnet) => {
+          let oldQuantity = prevCartContnet[productIndex].quantity;
+          let updatedQuantity = oldQuantity + quantity > 0 ? oldQuantity + quantity : 1;
+          let updatedCartContent = [...prevCartContnet];
+          updatedCartContent[productIndex] = {
+            product: prevCartContnet[productIndex].product,
+            quantity: updatedQuantity
+          }
+        return updatedCartContent;
+    })}}
+    else {
+      setCartContent((prevCartContnet) => {
+        let updatedCartContent = [...prevCartContnet]
+        updatedCartContent.splice(productIndex,1);
+        return updatedCartContent;
+    })
+    }
+  }
 
   return (
     <div className='app'>
       <Nav handle={() => setDisplayCheckout(true)}/>
       <main>
-        {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} /> : 
-        <ProductsGrid productList={items}/>}
+        {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : 
+        <ProductsGrid productList={items} handleCart={cartControler} />}
       </main>
       <Footer />
     </div>
