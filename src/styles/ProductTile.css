@@ -1,0 +1,32 @@
+.tile {
+    width: 280px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Roboto', sans-serif;
+    color: var(--detail-dark);
+    cursor: pointer;
+}
+.tile__img{
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
+}
+.tile__title{
+    text-align: center;
+    font-size:  18px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--detail-dark);
+}
+.tile__wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tile__star{
+    font-size: 18px;
+    margin-right: 3px;
+}

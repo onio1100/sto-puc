@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/ProductsGrid.css";
 import Banner from "./Banner";
+import ProductTile from "./ProductTile";
 import ProductPage from "./ProductPage";
 
 export default function ProductsGrid(props) {
@@ -31,7 +32,13 @@ export default function ProductsGrid(props) {
         
         if (sortingCriteria !== "popular") {
           let sortingKey = sortingCriteria === "price" ? "price" : "rating.rate";
-          filteredProducts.sort((a, b) => a[sortingKey] - b[sortingKey]);
+          console.log(filteredProducts[1][sortingKey]);
+          filteredProducts.sort((a, b) =>{
+            let firstValue = sortingKey.split('.').reduce((o, key) => o[key], a);
+            let secendValue = sortingKey.split('.').reduce((o, key) => o[key], b);
+            return firstValue - secendValue;
+
+        });
           if (sortingOrder === "desc") {
             filteredProducts.reverse();
           }
@@ -52,12 +59,12 @@ export default function ProductsGrid(props) {
                 <Banner />
                 <div className="bar">
 
-                    <h4 className="bar__text">Shop</h4>
+                    <h4 className="bar__text"></h4>
 
                     <div className="filters">
                         <div className="filters__wraper">
                                 <label htmlFor="category" className="filters__label--category" >Category:</label>
-                                <span class="material-symbols-outlined filters__arrow" onClick={props.handleCart} >expand_more</span>
+                                <span className="material-symbols-outlined filters__arrow" onClick={props.handleCart} >expand_more</span>
                                 <select id="category"
                                         className="filters__select"
                                         value={JSON.stringify(filters.category)}
@@ -73,7 +80,7 @@ export default function ProductsGrid(props) {
 
                             <div className="filters__wraper">
                                 <label htmlFor="sort" className="filters__label--category" >Sort By:</label>
-                                <span class="material-symbols-outlined filters__arrow" onClick={props.handleCart} >expand_more</span>
+                                <span className="material-symbols-outlined filters__arrow" onClick={props.handleCart} >expand_more</span>
                                 <select id="sort"
                                         className="filters__select"
                                         value={JSON.stringify(filters.sorting)}
@@ -95,11 +102,4 @@ export default function ProductsGrid(props) {
             </div>
         )
     }
-}
-
-function ProductTile(props){
-
-    return(
-        <img src={props.product.image} alt="item" className="test" onClick={() => props.handleProductPage(props.product)}></img>
-    )
 }
