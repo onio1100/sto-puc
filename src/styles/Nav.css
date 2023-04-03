@@ -8,10 +8,23 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid var(--detail-dark);
     cursor: pointer;
 }
+.nav__wraper{
+    height: 100%;
+    max-width: 1220px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
 .nav__logo{
+    font-size: 30px;
     font-family: 'Dosis', sans-serif;
     color: var(--detail-dark);
+}
+.material-symbols-outlined{
+    color: var(--detail-dark);
+    font-size: 28px;
 }

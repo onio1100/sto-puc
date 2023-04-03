@@ -1,0 +1,51 @@
+.banner {
+    height: 650px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.banner__img{
+    height: 100%;
+    width: 60%;
+    background-image: url(../assets/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+.banner__wraper{
+    height: 100%;
+    width: 40%;
+    margin-left: 25px;
+    background-color: var(--detail-light);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 40px;
+    font-family: 'Roboto', sans-serif;
+}
+.banner__text--title{
+    font-size: 45px;
+    color: var(--detail-dark);
+}
+.banner__text--slogan{
+    font-size: 20px;
+    color: var(--detail-dark);
+    margin: 10px 0;
+}
+.banner__button{
+    width: 150px;
+    height: 40px;
+    background-color: var(--detail-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.banner__button:hover{
+    color: var(--detail-light);
+}

@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Nav handle={() => setDisplayCheckout(true)}/>
+      <Nav handleCart={() => setDisplayCheckout(true)} handleLogo={() => setDisplayCheckout(false)}/>
       <main>
         {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : 
         <ProductsGrid productList={items} handleCart={cartControler} />}

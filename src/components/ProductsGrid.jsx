@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/ProductsGrid.css";
+import Banner from "./Banner";
 import ProductPage from "./ProductPage";
 
 export default function ProductsGrid(props) {
@@ -48,35 +49,45 @@ export default function ProductsGrid(props) {
     } else {
         return (
             <div className="item-list">
-                <div className="item_list__banner">
-                    {/* baner o nowej kolkcji może animowany ale to trza by było mieć grafiiki fajne  */}
-                </div>
-                <div className="filters-bar">
+                <Banner />
+                <div className="bar">
 
-                    <label htmlFor="category" className="" ></label>
-                    <select id="category"
-                            value={JSON.stringify(filters.category)}
-                            onChange={inputsControl}
-                            name="category">
-                        <option value={JSON.stringify("all")}>all</option>
-                        <option value={JSON.stringify("men's clothing")}>men's clothing</option>
-                        <option value={JSON.stringify("women's clothing")}>women's clothing</option>
-                        <option value={JSON.stringify("jewelery")}>jewelery</option>
-                        <option value={JSON.stringify("electronics")}>electronics</option>
-                    </select>
+                    <h4 className="bar__text">Shop</h4>
 
-                    <label htmlFor="sort" className="" ></label>
-                    <select id="sort"
-                            value={JSON.stringify(filters.sorting)}
-                            onChange={inputsControl}
-                            name="sorting">
-                        <option value={JSON.stringify(["popular", "asc"])} >most popular</option>
-                        <option value={JSON.stringify(["price", "asc"])} >price: low to high</option>
-                        <option value={JSON.stringify(["price", "desc"])} >price: high to low</option>
-                        <option value={JSON.stringify(["reviews", "asc"])} >reviews: low to high</option>
-                        <option value={JSON.stringify(["reviews", "desc"])} >reviews: high to low</option>
-                    </select>
+                    <div className="filters">
+                        <div className="filters__wraper">
+                                <label htmlFor="category" className="filters__label--category" >Category:</label>
+                                <span class="material-symbols-outlined filters__arrow" onClick={props.handleCart} >expand_more</span>
+                                <select id="category"
+                                        className="filters__select"
+                                        value={JSON.stringify(filters.category)}
+                                        onChange={inputsControl}
+                                        name="category">
+                                    <option value={JSON.stringify("all")}>all</option>
+                                    <option value={JSON.stringify("men's clothing")}>men's clothing</option>
+                                    <option value={JSON.stringify("women's clothing")}>women's clothing</option>
+                                    <option value={JSON.stringify("jewelery")}>jewelery</option>
+                                    <option value={JSON.stringify("electronics")}>electronics</option>
+                                </select>
+                            </div>
 
+                            <div className="filters__wraper">
+                                <label htmlFor="sort" className="filters__label--category" >Sort By:</label>
+                                <span class="material-symbols-outlined filters__arrow" onClick={props.handleCart} >expand_more</span>
+                                <select id="sort"
+                                        className="filters__select"
+                                        value={JSON.stringify(filters.sorting)}
+                                        onChange={inputsControl}
+                                        name="sorting">
+                                    <option value={JSON.stringify(["popular", "asc"])} >most popular</option>
+                                    <option value={JSON.stringify(["price", "asc"])} >price: low to high</option>
+                                    <option value={JSON.stringify(["price", "desc"])} >price: high to low</option>
+                                    <option value={JSON.stringify(["reviews", "asc"])} >reviews: low to high</option>
+                                    <option value={JSON.stringify(["reviews", "desc"])} >reviews: high to low</option>
+                                </select>
+                            </div>
+                    </div>
+                    
                 </div>
                 <div className="grid">
                     {createProductGrid()}
