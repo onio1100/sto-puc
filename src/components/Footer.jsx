@@ -1,5 +1,12 @@
+import { useState } from "react";
 import "../styles/Footer.css";
 export default function Footer() {
+    const [email,setEmail] = useState("");
+    
+    function handleEmail(e){
+        setEmail(e.target.value);
+    }
+
     return(
         <footer>
             <div className="footer__wraper">
@@ -11,12 +18,20 @@ export default function Footer() {
                         <li>About Us</li>
                     </ul>
                 </div>
-                <div className="footer__right">
-                    <div className="">
-                        <p></p>
-                        <input />
-                        <span></span>
+                <div className="footer__center">
+                    <p className="footer__text"></p>
+                    <div className="email">
+                        <input
+                            className="email__input"
+                            type="email"
+                            onChange={handleEmail}
+                            value={email}
+                            placeholder="Enter your email"
+                        />
+                        <span className="material-symbols-outlined email__icon" onClick={() => setEmail("")}>mail</span>
                     </div>
+                </div>
+                <div className="footer__right">
                     <div>
                         <p><a></a><a></a></p>
                         <p></p>
