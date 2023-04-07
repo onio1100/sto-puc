@@ -11,7 +11,7 @@ export default function ProductPage(props){
     }
 
     return(
-        <div className="product-page">
+        <div className="product">
         <p>{props.product.title}</p>
         <button onClick={() => props.handleClosing(false)}>wróć</button>
         <button onClick={changeQuantity}>+</button>

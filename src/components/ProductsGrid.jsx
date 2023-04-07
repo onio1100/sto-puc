@@ -96,7 +96,7 @@ export default function ProductsGrid(props) {
                     </div>
                     
                 </div>
-                <div className="grid">
+                <div className="grid" id="grid">
                     {createProductGrid()}
                 </div>
             </div>

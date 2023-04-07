@@ -12,14 +12,14 @@ export default function Footer() {
             <div className="footer__wraper">
                 <div className="footer__left">
                     <ul className="footer__list">
-                        <li>Contact us</li>
+                        <li>Return</li>
                         <li>Waranty</li>
-                        <li>Returns</li>
+                        <li>Contact Us</li>
                         <li>About Us</li>
                     </ul>
                 </div>
                 <div className="footer__center">
-                    <p className="footer__text"></p>
+                    <p className="footer__text">Stay up-to-date with our latest collections</p>
                     <div className="email">
                         <input
                             className="email__input"
@@ -33,8 +33,8 @@ export default function Footer() {
                 </div>
                 <div className="footer__right">
                     <div>
-                        <p><a></a><a></a></p>
-                        <p></p>
+                        <p className="footer__ppandtos"><a className="footer__a">Privacy Policy</a> • <a className="footer__a">Terms of Service</a></p>
+                        <p className="footer__copyright">Copyright © 2023 onio1100</p>
                     </div>
                 </div>
             </div>    
