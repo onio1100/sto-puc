@@ -1,0 +1,39 @@
+.sbanner{
+    width: 1220px;
+    height: 400px;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    margin: 50px 0;
+}
+.sbanner__left{
+    height: 100%;
+    width: 50%;
+    margin-right: 12px;
+}
+.sbanner__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+.sbanner__right{
+    height: 100%;
+    width: 50%;
+    margin-left: 12px;
+    background-color: var(--detail-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 60px;
+    color: var(--detail-dark);
+}
+.sbanner__title{
+    font-size: 27px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.sbanner__text{
+    max-width: 470px;
+    line-height: 1.6;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/ProductPage.css";
+import SmallBanner from "./SmallBanner";
 export default function ProductPage(props){
     const [quantity, setQuantity] = useState(1);
     
@@ -12,6 +13,9 @@ export default function ProductPage(props){
 
     return(
         <div className="product">
+            <div className="product__back--wraper" onClick={() => props.handleClosing(false)}> 
+                <span className="material-symbols-outlined product__back--arrow">arrow_back</span>
+            </div>
             <div className="product__top">
                 <div className="top__left">
                     <img src={props.product.image} alt={props.product.title} className="top__img" />
@@ -39,24 +43,24 @@ export default function ProductPage(props){
                         </li>
                     </ul>
                     <div className="top__quantity">
-                        <button className="top__quantity--button">-</button>
-                        <p className="top__quantity"></p>
-                        <button className="top__quantity--button">+</button>
+                        <button className="top__quantity--button" onClick={() => changeQuantity(false)}>-</button>
+                        <p className="top__quantity--display">{quantity}</p>
+                        <button className="top__quantity--button" onClick={changeQuantity}>+</button>
                     </div>
-                    <button className="top__add-to-cart"></button>
+                    <button className="top__add-to-cart" onClick={() => props.handleCart(props.product, quantity)}>ADD TO CART</button>
                 </div>
             </div>
 
-            <div className="small__banner"></div>
+            <SmallBanner />
             <div className="benefitsBar"></div>
             <div className="slider"></div>
 
-            <p>{props.product.title}</p>
+            {/* <p>{props.product.title}</p>
             <button onClick={() => props.handleClosing(false)}>wróć</button>
             <button onClick={changeQuantity}>+</button>
             <div>{quantity}</div>
             <button onClick={() => changeQuantity(false)}>-</button>
-            <button onClick={() => props.handleCart(props.product, quantity)}>add to cart</button>
+            <button onClick={() => props.handleCart(props.product, quantity)}>add to cart</button> */}
         </div>
     )
 }
