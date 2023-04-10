@@ -1,0 +1,30 @@
+.ibar{
+    width: 100%;
+    max-width: 1220px;
+    height: 215px;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ibar__wraper{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: var(--detail-dark);
+    width: 387px;
+}
+.ibar__header{
+    font-size: 13px;
+    margin-bottom: 5px;
+    letter-spacing: 1.5px;
+}
+.ibar__title{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.ibar__text{
+    font-size: 16px;
+    line-height: 1.6;
+}

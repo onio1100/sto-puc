@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../styles/ProductPage.css";
+import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
+import InfoBar from "./InfoBar";
 export default function ProductPage(props){
     const [quantity, setQuantity] = useState(1);
     
@@ -51,9 +53,9 @@ export default function ProductPage(props){
                 </div>
             </div>
 
+            <BenefitsBar />
             <SmallBanner />
-            <div className="benefitsBar"></div>
-            <div className="slider"></div>
+            <InfoBar />
 
             {/* <p>{props.product.title}</p>
             <button onClick={() => props.handleClosing(false)}>wróć</button>
