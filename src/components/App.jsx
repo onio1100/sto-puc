@@ -51,12 +51,19 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Nav handleCart={() => setDisplayCheckout(true)} handleLogo={() => setDisplayCheckout(false)}/>
-      <main>
-        {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : 
-        <ProductsGrid productList={items} handleCart={cartControler} />}
-      </main>
-      <Footer />
+      {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : (
+        <div>
+          <Nav handleCart={() => setDisplayCheckout(true)} handleLogo={() => setDisplayCheckout(false)}/>
+          <ProductsGrid productList={items} handleCart={cartControler} />
+          <Footer />
+        </div>
+        )}
     </div>
   )
 }
+
+// <main>
+//         {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : 
+//         <ProductsGrid productList={items} handleCart={cartControler} />}
+//       </main>
+//       <Footer />

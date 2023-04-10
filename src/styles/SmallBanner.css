@@ -3,7 +3,7 @@
     height: 400px;
     display: flex;
     font-family: 'Roboto', sans-serif;
-    margin: 50px 0;
+    margin: 50px auto;
 }
 .sbanner__left{
     height: 100%;

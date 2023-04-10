@@ -3,6 +3,9 @@ import "../styles/ProductsGrid.css";
 import Banner from "./Banner";
 import ProductTile from "./ProductTile";
 import ProductPage from "./ProductPage";
+import BenefitsBar from "./BenefitsBar";
+import SmallBanner from "./SmallBanner";
+import InfoBar from "./InfoBar";
 
 export default function ProductsGrid(props) {
     const [filters, setFilters] = useState({
@@ -57,8 +60,8 @@ export default function ProductsGrid(props) {
         return (
             <div className="item-list">
                 <Banner />
+                <BenefitsBar />
                 <div className="bar">
-
                     <h4 className="bar__text"></h4>
 
                     <div className="filters">
@@ -99,6 +102,8 @@ export default function ProductsGrid(props) {
                 <div className="grid" id="grid">
                     {createProductGrid()}
                 </div>
+                <SmallBanner />
+                <InfoBar />
             </div>
         )
     }

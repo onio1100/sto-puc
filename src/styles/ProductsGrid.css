@@ -1,14 +1,14 @@
 .bar{
     width: 100%;
     max-width: 1220px;
-    margin: 100px auto 50px;
+    margin: -40px auto 50px;
     height: 78px;
-    background-color: var(--detail-dark);
+    /* background-color: var(--detail-dark); */
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    color: var(--detail-light);
+    color: var(--detail-dark);
 }
 .bar__text{
     width: 100px;
