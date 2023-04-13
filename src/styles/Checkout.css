@@ -24,7 +24,7 @@
 }
 .checkoutr__content{
     width: 100%;
-    max-width: 610px;
+    max-width: 418px;
     display: flex;
     flex-direction: column;
     margin-left: 50px;
@@ -39,6 +39,9 @@
     height: 64px;
     margin-bottom: 10px;
     display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    color: var(--detail-dark);
 }
 .checkoutr__img--wraper{
     height: 100%;
@@ -53,4 +56,115 @@
     border-radius: 10px;
     border: 1px solid var(--border);
     padding: 2px;
+}
+.checkoutr__title{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 0 14px;
+    width: 130px;
+}
+.checkoutr__quantity--wraper{
+    width: 130px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.checkoutr__quantity--change{
+    height: 26px;
+    width: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    border: 1px solid var(--detail-dark);
+    color: var(--detail-dark);
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 18px;
+}
+.checkoutr__quantity--change:hover{
+    background-color: var(--detail-dark);
+    color: var(--detail-light);
+}
+.checkoutr__quantity--display{
+    width: 40px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--detail-dark);
+    border-bottom: 1px solid var(--detail-dark);
+    font-size: 18px;
+}
+.checkoutr__quantity--delete{
+    margin-left: 10px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--detail-dark);
+    transition: 0.2s;
+    cursor: pointer;
+}
+.checkoutr__quantity--icon{
+    transition: 0.2s;
+    user-select: none;
+    pointer-events: none;
+    color: var(--detail-dark);
+    font-size: 18px;
+}
+.checkoutr__quantity--delete:hover{
+    background-color: var(--detail-dark);
+}
+.checkoutr__quantity--delete:hover .checkoutr__quantity--icon{
+    color: var(--detail-light);
+}
+.checkoutr__price{
+    height: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+.checkoutr__discout--wraper{
+    width: 100%;
+    height: 48px;
+    margin: 10px 0;
+    display: flex;
+}
+.checkoutr__discout--label{
+    font-size: 0px;
+    
+}
+.checkoutr__discout--input{
+    font-size: 14px;
+    color: var(--detail-dark);
+    box-shadow: none;
+    border: none;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 0 11px;
+    height: 48px;
+    width: 335px;
+}
+.checkoutr__discout--button{
+    margin-left: 18px;
+    height: 100%;
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--detail-dark);
+    color: var(--detail-light);
+    border: none;
+    box-shadow: none;
+    border-radius: 7px;
 }

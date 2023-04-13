@@ -60,7 +60,11 @@ export default function Checkout(props){
                             ))
                         }
                     </ul>
-                    <form className="checkoutr__discout"></form>
+                    <form className="checkoutr__discout--wraper">
+                        <label className="checkoutr__discout--label">Gift cardor discount code</label>
+                        <input className="checkoutr__discout--input" type="text" placeholder="Gift cardor discount code" />
+                        <button className="checkoutr__discout--button">Apply</button>
+                    </form>
                     <div className="checkoutr__subtotal--wraper">
                         <p className="checkoutr__subtotal--text">subtotal</p>
                         <p className="checkoutr__subtotal--value"></p>
@@ -96,14 +100,16 @@ function ListItem(props){
             <div className="checkoutr__img--wraper">
                 <img className="checkoutr__img" src={props.product.image} alr={props.product.title} />
             </div>
-            <p className="checkoutr__title"></p>
+            <p className="checkoutr__title">{props.product.title}</p>
             <div className="checkoutr__quantity--wraper">
-                <button className="checkoutr__quantity--chagne"></button>
-                <p className="checkoutr__quantity--display"></p>
-                <button className="checkoutr__quantity--chagne"></button>
-                <button className="checkoutr__quantity--delete"></button>
+                <button className="checkoutr__quantity--change" onClick={() => props.handleCart(props.product, -1)}>-</button>
+                <p className="checkoutr__quantity--display">{props.quantity}</p>
+                <button className="checkoutr__quantity--change" onClick={() => props.handleCart(props.product)}>+</button>
+                <button className="checkoutr__quantity--delete" onClick={() => props.handleCart(props.product, 1, true)}>
+                    <span className="material-symbols-outlined checkoutr__quantity--icon">delete</span>
+                </button>
             </div>
-            <p className="chekoutr__price"></p>
+            <p className="checkoutr__price">{props.product.price}$</p>
         </li>
             // {/* <p>name: {props.product.title}</p>
             // <button onClick={() => props.handleCart(props.product)}>+</button>

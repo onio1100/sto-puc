@@ -131,6 +131,7 @@
     font-weight: 700;
     transition: 0.2s;
     cursor: pointer;
+    color: var(--detail-dark);
 }
 .top__add-to-cart:hover{
     background-color: var(--detail-dark);
