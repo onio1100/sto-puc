@@ -60,22 +60,22 @@ export default function Checkout(props){
                             ))
                         }
                     </ul>
-                    <form className="checkoutr__discout--wraper">
+                    <div className="checkoutr__discout--wraper">
                         <label className="checkoutr__discout--label">Gift cardor discount code</label>
-                        <input className="checkoutr__discout--input" type="text" placeholder="Gift cardor discount code" />
+                        <input className="checkoutr__discout--input" type="text" placeholder="Gift card or discount code" />
                         <button className="checkoutr__discout--button">Apply</button>
-                    </form>
+                    </div>
                     <div className="checkoutr__subtotal--wraper">
-                        <p className="checkoutr__subtotal--text">subtotal</p>
-                        <p className="checkoutr__subtotal--value"></p>
+                        <p className="checkoutr__subtotal--text">Subtotal</p>
+                        <p className="checkoutr__subtotal--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p>
                     </div>
                     <div className="checkoutr__shipping--wraper">
-                        <p className="checkoutr__shipping--text">shipping</p>
-                        <p className="checkoutr__shipping--value"></p>
+                        <p className="checkoutr__shipping--text">Shipping</p>
+                        <p className="checkoutr__shipping--value">Free</p>
                     </div>
                     <div className="checkoutr__total--wraper">
-                        <p className="checkoutr__total--text">total</p>
-                        <p className="checkoutr__total--value"></p>
+                        <p className="checkoutr__total--text">Total</p>
+                        <p className="checkoutr__total--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p>
                     </div>
                 </div>
             </div>

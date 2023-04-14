@@ -33,13 +33,13 @@
 .checkoutr__list{
     list-style: none;
     display: flex;
+    flex-direction: column;
 }
 .checkoutr__item{
     width: 100%;
     height: 64px;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     color: var(--detail-dark);
 }
@@ -167,4 +167,21 @@
     border: none;
     box-shadow: none;
     border-radius: 7px;
+    cursor: pointer;
+}
+.checkoutr__subtotal--wraper{
+    margin-top: 20px;
+}
+.checkoutr__subtotal--wraper, .checkoutr__shipping--wraper, .checkoutr__total--wraper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--detail-dark)
+}
+.checkoutr__subtotal--text, .checkoutr__shipping--text, .checkoutr__subtotal--value, .checkoutr__shipping--value{
+    font-size: 14px;
+}
+.checkoutr__total--text, .checkoutr__total--value{
+    font-size: 17px;
 }
