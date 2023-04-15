@@ -92,13 +92,70 @@
 .checkoutl__form--checkbox--label{
     font-size: 14px;
 }
-.checkoutl__form--select{
+.checkoutl__form--select--wraper{
+    position: relative;
+    margin-bottom: 10px;
+}
+.checkoutl__form--select--arrow{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+.checkoutl__form--select--select{
     width: 100%;
     height: 48px;
     border: 1px solid var(--border);
     padding-left: 10px;
     border-radius: 5px;
     appearance: none;
+    cursor: pointer;
+}
+.checkoutl__form--labelh{
+    font-size: 0;
+}
+.checkoutl__form--wraper{
+    display: flex;
+}
+.half{
+    width: 50%;
+}
+.margin{
+    margin-right: 10px;
+}
+.checkoutl__buttons{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--detail-dark);
+}
+.checkoutl__buttons--wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.checkoutl__buttons--icon{
+    font-size: 18px;
+}
+.checkoutl__buttons--text{
+    font-size: 14px;
+}
+.checkoutl__buttons--button{
+    border: none;
+    box-shadow: none;
+    background-color: var(--detail-dark);
+    color: var(--detail-light);
+    padding: 0 15px;
+    height: 48px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.checkoutl__buttons--button:hover{
+    background-color: #000;
 }
 .checkoutr__content{
     width: 100%;

@@ -8,7 +8,7 @@ export default function Checkout(props){
                     <h1 className="checkoutl__logo" onClick={props.handle}>STO-PUC</h1>
                     <div className="checkoutl__form">
                         
-                        <label className="checkoutl__form--label">Email</label>
+                        <label className="checkoutl__form--label">Contact</label>
                         <input className="checkoutl__form--input" type="email" placeholder="Email"/>
 
                         <div className="checkoutl__form--checkbox--wraper">
@@ -16,37 +16,50 @@ export default function Checkout(props){
                             <label className="checkoutl__form--checkbox--label">Email me with news and offers</label>
                         </div>
 
-                        <label className="checkoutl__form--label">Country</label>
-                        <select className="checkoutl__form--select">
-                            <option>USA</option>
-                            <option>Poland</option>
-                            <option>Germany</option>
-                        </select>
+                        <label className="checkoutl__form--label">Shipping information</label>
+                        <div className="checkoutl__form--select--wraper">
+                            <span className="material-symbols-outlined checkoutl__form--select--arrow">expand_more</span>
+                            <select className="checkoutl__form--select--select">
+                                <option>USA</option>
+                                <option>Poland</option>
+                                <option>Germany</option>
+                            </select>
+                        </div>                        
 
-                        <label>name</label>
-                        <input />
+                        <div className="checkoutl__form--wraper">
+                            <label className="checkoutl__form--labelh">First name</label>
+                            <input className="checkoutl__form--input half margin" type="text" placeholder="First name"/>
 
-                        <label>last name</label>
-                        <input />
+                            <label className="checkoutl__form--labelh">Last name</label>
+                            <input  className="checkoutl__form--input half" type="text" placeholder="Last name"/>
+                        </div>
 
-                        <label>adress</label>
-                        <input />
+                        <label className="checkoutl__form--labelh">Adress</label>
+                        <input  className="checkoutl__form--input" type="text" placeholder="Adress"/>
 
-                        <label>adress line 2</label>
-                        <input />
+                        <label className="checkoutl__form--labelh">Adress line 2 (optional)</label>
+                        <input  className="checkoutl__form--input" type="text" placeholder="Adress line 2 (optional)"/>
 
-                        <label>city</label>
-                        <input />
 
-                        <label>zip code</label>
-                        <input />
+                        <div className="checkoutl__form--wraper">
+                            <label className="checkoutl__form--labelh">City</label>
+                            <input  className="checkoutl__form--input half margin" type="text" placeholder="City"/>
 
-                        <label>phone number</label>
-                        <input />
+                            <label className="checkoutl__form--labelh">Zip code</label>
+                            <input  className="checkoutl__form--input half" type="text" placeholder="Zip code"/>
+                        </div>
 
-                        <a>return to cart</a>
+                        <label className="checkoutl__form--labelh">Phone number</label>
+                        <input  className="checkoutl__form--input" type="text" placeholder="Phone number"/>
 
-                        <button></button>
+                        <div className="checkoutl__buttons">
+                            <div className="checkoutl__buttons--wraper" onClick={props.handle}>
+                                <span className="checkoutl__buttons--icon material-symbols-outlined">arrow_back_ios</span>
+                                <p className="checkoutl__buttons--text">Return to cart</p>
+                            </div>
+                            <button className="checkoutl__buttons--button">Continue to payment</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
