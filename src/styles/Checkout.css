@@ -18,9 +18,87 @@
 }
 .checkoutl__content{
     width: 100%;
-    max-width: 610px;
+    max-width: 570px;
+    margin-right: 50px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
+}
+.checkoutl__logo{
+    font-size: 50px;
+    color: var(--detail-dark);
+    font-family: 'Dosis', sans-serif;
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 35px;
+}
+.checkoutl__form{
+    display: flex;
+    flex-direction: column;
+    color: var(--detail-dark);
+    font-family: 'Roboto', sans-serif;
+}
+.checkoutl__form--label{
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.checkoutl__form--input{
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.checkoutl__form--checkbox--wraper{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.checkoutl__form--checkbox--input{
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    transition: 0.2s;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.checkoutl__form--checkbox--input::before{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    content: "";
+    background-color: var(--detail-light);
+    border-radius: 50%;
+    transition: 0.2s;
+}
+.checkoutl__form--checkbox--input:checked{
+    border-color: var(--detail-dark);
+    background-color: var(--detail-dark);
+}
+.checkoutl__form--checkbox--input:checked:before{
+    width: 9px;
+    height: 9px;
+}
+.checkoutl__form--checkbox--label{
+    font-size: 14px;
+}
+.checkoutl__form--select{
+    width: 100%;
+    height: 48px;
+    border: 1px solid var(--border);
+    padding-left: 10px;
+    border-radius: 5px;
+    appearance: none;
 }
 .checkoutr__content{
     width: 100%;

@@ -5,22 +5,22 @@ export default function Checkout(props){
 
             <div className="checkout__left">
                 <div className="checkoutl__content">
-                    <h1 className="checkoutl__logo"></h1>
-                    <form className="checkoutl__form">
+                    <h1 className="checkoutl__logo" onClick={props.handle}>STO-PUC</h1>
+                    <div className="checkoutl__form">
                         
-                        <label>email</label>
-                        <input />
+                        <label className="checkoutl__form--label">Email</label>
+                        <input className="checkoutl__form--input" type="email" placeholder="Email"/>
 
-                        <label>newslettercheckbox</label>
-                        <input />
+                        <div className="checkoutl__form--checkbox--wraper">
+                            <input className="checkoutl__form--checkbox--input" type="checkbox"/>
+                            <label className="checkoutl__form--checkbox--label">Email me with news and offers</label>
+                        </div>
 
-                        <p>Shipping addres</p>
-
-                        <label>country</label>
-                        <select>
-                            <option></option>
-                            <option></option>
-                            <option></option>
+                        <label className="checkoutl__form--label">Country</label>
+                        <select className="checkoutl__form--select">
+                            <option>USA</option>
+                            <option>Poland</option>
+                            <option>Germany</option>
                         </select>
 
                         <label>name</label>
@@ -47,7 +47,7 @@ export default function Checkout(props){
                         <a>return to cart</a>
 
                         <button></button>
-                    </form>
+                    </div>
                 </div>
             </div>
             
