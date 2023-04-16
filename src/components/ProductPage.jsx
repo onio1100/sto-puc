@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/ProductPage.css";
 import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
@@ -6,6 +6,13 @@ import InfoBar from "./InfoBar";
 export default function ProductPage(props){
     const [quantity, setQuantity] = useState(1);
     
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant'
+        });
+      }, []);
+
     function changeQuantity(add = true){
        let quantityModifier = add ? 1 : -1;
        setQuantity((prevQuantity) => (

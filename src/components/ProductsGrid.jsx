@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/ProductsGrid.css";
 import Banner from "./Banner";
 import ProductTile from "./ProductTile";
@@ -13,6 +13,19 @@ export default function ProductsGrid(props) {
         sorting: ["popular","asc"] //popular, price, reviews | asc , desc
     })
     const [selectedProduct, setSelectedProduct] = useState(false);
+    const [scroll, setScroll] = useState(0);
+
+    function scrollMemeory() {
+        window.scrollTo({
+            top: scroll,
+            behavior: 'instant'
+        });
+
+        window.addEventListener("scroll", handleScroll)
+    }
+    function handleScroll() {
+        setScroll(window.scrollY);
+    }
 
     function inputsControl(e){
         const {name, value} = e.target;
@@ -53,10 +66,12 @@ export default function ProductsGrid(props) {
       }
 
     if(selectedProduct){
+        window.removeEventListener("scroll", handleScroll)
         return( 
             <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} handleCart={props.handleCart} />
         )
     } else {
+        scrollMemeory()
         return (
             <div className="item-list">
                 <Banner />

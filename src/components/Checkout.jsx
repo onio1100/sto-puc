@@ -50,7 +50,7 @@ export default function Checkout(props){
                         </div>
 
                         <label className="checkoutl__form--labelh">Phone number</label>
-                        <input  className="checkoutl__form--input" type="text" placeholder="Phone number"/>
+                        <input  className="checkoutl__form--input" type="tel" placeholder="Phone number"/>
 
                         <div className="checkoutl__buttons">
                             <div className="checkoutl__buttons--wraper" onClick={props.handle}>
