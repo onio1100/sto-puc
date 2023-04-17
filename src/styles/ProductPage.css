@@ -8,9 +8,9 @@
 .product__back--wraper{
     width: 40px;
     height: 28px;
-    position: absolute;
-    top: 0;
-    left: 5px;
+    position: fixed;
+    top: 80px;
+    left: 10px;
     cursor: pointer;
 }
 .product__back--arrow{
@@ -25,21 +25,23 @@
 }
 .product__top{
     width: 100%;
-    height: 770px;
+    height: auto;
+    min-height: 770px;
     display: flex;
+    overflow: visible;
 }
 .top__left{
     width: 60%;
-    height: 100%;
+    height: 770px;
 }
 .top__img{
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit :scale-down;
     object-position: center;
 }
 .top__right{
-    height: 100%;
+    min-height: 100%;
     width: 40%;
     margin-left: 25px;
     background-color: var(--detail-light);
@@ -131,6 +133,7 @@
     font-weight: 700;
     transition: 0.2s;
     cursor: pointer;
+    margin-bottom: 10px;
     color: var(--detail-dark);
 }
 .top__add-to-cart:hover{

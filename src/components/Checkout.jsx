@@ -55,7 +55,7 @@ export default function Checkout(props){
                         <div className="checkoutl__buttons">
                             <div className="checkoutl__buttons--wraper" onClick={props.handle}>
                                 <span className="checkoutl__buttons--icon material-symbols-outlined">arrow_back_ios</span>
-                                <p className="checkoutl__buttons--text">Return to cart</p>
+                                <p className="checkoutl__buttons--text">Return to shop</p>
                             </div>
                             <button className="checkoutl__buttons--button">Continue to payment</button>
                         </div>

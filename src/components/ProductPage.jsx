@@ -22,7 +22,9 @@ export default function ProductPage(props){
 
     return(
         <div className="product">
-            <div className="product__back--wraper" onClick={() => props.handleClosing(false)}> 
+            <div className="product__back--wraper" onClick={() => {
+                props.handleScroll()
+                props.handleClosing(false)}}> 
                 <span className="material-symbols-outlined product__back--arrow">arrow_back</span>
             </div>
             <div className="product__top">
@@ -63,13 +65,6 @@ export default function ProductPage(props){
             <BenefitsBar />
             <SmallBanner />
             <InfoBar />
-
-            {/* <p>{props.product.title}</p>
-            <button onClick={() => props.handleClosing(false)}>wróć</button>
-            <button onClick={changeQuantity}>+</button>
-            <div>{quantity}</div>
-            <button onClick={() => changeQuantity(false)}>-</button>
-            <button onClick={() => props.handleCart(props.product, quantity)}>add to cart</button> */}
         </div>
     )
 }

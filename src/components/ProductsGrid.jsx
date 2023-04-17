@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../styles/ProductsGrid.css";
 import Banner from "./Banner";
 import ProductTile from "./ProductTile";
@@ -20,12 +20,16 @@ export default function ProductsGrid(props) {
             top: scroll,
             behavior: 'instant'
         });
+    }
 
-        window.addEventListener("scroll", handleScroll)
-    }
-    function handleScroll() {
-        setScroll(window.scrollY);
-    }
+    // useEffect(() => {
+    //     window.addEventListener("scroll", () => {
+    //         if(selectedProduct === false){
+    //             console.log("scrolowanie");
+    //             setScroll(window.scrollY)
+    //         }
+    //     })
+    // }, [])
 
     function inputsControl(e){
         const {name, value} = e.target;
@@ -61,17 +65,15 @@ export default function ProductsGrid(props) {
         }
         
         return filteredProducts.map((product) => (
-          <ProductTile product={product} key={product.id}  handleProductPage={setSelectedProduct} />
+          <ProductTile product={product} key={product.id}  handleProductPage={setSelectedProduct} handleScroll={setScroll}/>
         ));
       }
 
     if(selectedProduct){
-        window.removeEventListener("scroll", handleScroll)
         return( 
-            <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} handleCart={props.handleCart} />
+            <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} handleCart={props.handleCart} handleScroll={scrollMemeory}/>
         )
     } else {
-        scrollMemeory()
         return (
             <div className="item-list">
                 <Banner />
