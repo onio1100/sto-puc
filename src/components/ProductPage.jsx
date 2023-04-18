@@ -22,9 +22,7 @@ export default function ProductPage(props){
 
     return(
         <div className="product">
-            <div className="product__back--wraper" onClick={() => {
-                props.handleScroll()
-                props.handleClosing(false)}}> 
+            <div className="product__back--wraper" onClick={() => {props.handleClosing(false)}}> 
                 <span className="material-symbols-outlined product__back--arrow">arrow_back</span>
             </div>
             <div className="product__top">

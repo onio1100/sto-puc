@@ -13,23 +13,6 @@ export default function ProductsGrid(props) {
         sorting: ["popular","asc"] //popular, price, reviews | asc , desc
     })
     const [selectedProduct, setSelectedProduct] = useState(false);
-    const [scroll, setScroll] = useState(0);
-
-    function scrollMemeory() {
-        window.scrollTo({
-            top: scroll,
-            behavior: 'instant'
-        });
-    }
-
-    // useEffect(() => {
-    //     window.addEventListener("scroll", () => {
-    //         if(selectedProduct === false){
-    //             console.log("scrolowanie");
-    //             setScroll(window.scrollY)
-    //         }
-    //     })
-    // }, [])
 
     function inputsControl(e){
         const {name, value} = e.target;
@@ -65,13 +48,13 @@ export default function ProductsGrid(props) {
         }
         
         return filteredProducts.map((product) => (
-          <ProductTile product={product} key={product.id}  handleProductPage={setSelectedProduct} handleScroll={setScroll}/>
+          <ProductTile product={product} key={product.id}  handleProductPage={setSelectedProduct}/>
         ));
       }
 
     if(selectedProduct){
         return( 
-            <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} handleCart={props.handleCart} handleScroll={scrollMemeory}/>
+            <ProductPage product={selectedProduct} handleClosing={setSelectedProduct} handleCart={props.handleCart}/>
         )
     } else {
         return (

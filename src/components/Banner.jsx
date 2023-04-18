@@ -1,5 +1,14 @@
+import { useEffect } from "react"
 import "../styles/Banner.css"
 export default function Banner() {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant'
+        });
+    }, []);
+
     return(
         <section className="banner">
             <div className="banner__img"></div>

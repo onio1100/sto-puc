@@ -3,8 +3,8 @@ export default function InfoBar() {
     return(
         <ul className="ibar">
             <li className="ibar__wraper">
-                <p className="ibar__header">PLACE HOLDER TEXT</p>
-                <p className="ibar__title">Comfort over style</p>
+                <p className="ibar__header">COMFORT MATTERS</p>
+                <p className="ibar__title">Comfort and style</p>
                 <p className="ibar__text">Simplify your coffee routine to the touch of a button. The Ratio Six’s Bloom, Brew, and Ready phases run in sequence, delivering a perfect (and easy) cup of coffee every time.</p>
             </li>
             <li className="ibar__wraper">

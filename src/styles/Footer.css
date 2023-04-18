@@ -18,14 +18,15 @@ footer{
     height: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .footer__list{
     height: 100%;
+    width: 80%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-between;
     list-style: none;    
 }
 .footer__list>li{

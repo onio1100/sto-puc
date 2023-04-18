@@ -1,5 +1,5 @@
 import "../styles/SmallBanner.css";
-import img from "../assets/banner.jpg";
+import img from "../assets/small_banner.jpg";
 export default function SmallBanner(){
     return(
         <section className="sbanner">   
@@ -7,8 +7,8 @@ export default function SmallBanner(){
                 <img src={img} alt="banner image" className="sbanner__img" />
             </div>
             <div className="sbanner__right">
-                <p className="sbanner__title">Some stupi bullshit</p>
-                <p className="sbanner__text">This is some placholder text becous I need text to see how style looks. I need more text becuse the first sentence is to short and propably i need more sentences.</p>
+                <p className="sbanner__title">Earth care</p>
+                <p className="sbanner__text">By choosing our products, you take care of yourself and our products take care of the earth. At least 50% of the materials in our products have been recycled and our company focuses on conscious and thoughtful consumption.</p>
             </div>
         </section>
     )
