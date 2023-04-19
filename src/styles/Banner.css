@@ -50,3 +50,18 @@
 .banner__button:hover{
     color: var(--detail-light);
 }
+@media screen and (max-width: 900px) {
+    .banner{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .banner__img{
+        width: 100%;
+        height: 400px;
+    }
+    .banner__wraper{
+        width: 100%;
+        height: 250px;
+        margin: 0;
+    }
+}

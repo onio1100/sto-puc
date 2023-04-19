@@ -4,7 +4,7 @@ export default function Nav(props) {
         <nav>
             <div className="nav__wraper">
                 <h1 className="nav__logo" onClick={props.handleLogo}>STO-PUC</h1>
-                <span className="material-symbols-outlined" onClick={props.handleCart} >shopping_cart</span>
+                <span className={"material-symbols-outlined " + (props.cartState ? "nav__cart nav__cart--on" : "nav__cart")} onClick={props.handleCart} >shopping_cart</span>
             </div>
         </nav>
     )

@@ -1,9 +1,10 @@
 .sbanner{
-    width: 1220px;
+    max-width: 1220px;
+    width: 100%;
     height: 400px;
     display: flex;
     font-family: 'Roboto', sans-serif;
-    margin: 50px auto;
+    margin: 50px 0;
 }
 .sbanner__left{
     height: 100%;
@@ -27,6 +28,7 @@
     align-items: flex-start;
     padding-left: 60px;
     color: var(--detail-dark);
+    padding-right: 10px;
 }
 .sbanner__title{
     font-size: 27px;
@@ -36,4 +38,9 @@
 .sbanner__text{
     max-width: 470px;
     line-height: 1.6;
+}
+@media screen and (max-width: 1100px) {
+    .sbanner__right{
+        padding: 0 20px;
+    }
 }

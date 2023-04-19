@@ -20,7 +20,6 @@ export default function ProductsGrid(props) {
             ...prevFilters,
             [name]: JSON.parse(value)
         }))
-        console.log(filters)
     }
 
     function createProductGrid() {
@@ -35,7 +34,6 @@ export default function ProductsGrid(props) {
         
         if (sortingCriteria !== "popular") {
           let sortingKey = sortingCriteria === "price" ? "price" : "rating.rate";
-          console.log(filteredProducts[1][sortingKey]);
           filteredProducts.sort((a, b) =>{
             let firstValue = sortingKey.split('.').reduce((o, key) => o[key], a);
             let secendValue = sortingKey.split('.').reduce((o, key) => o[key], b);

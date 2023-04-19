@@ -140,3 +140,27 @@
     background-color: var(--detail-dark);
     color: var(--detail-light);
 }
+@media screen and (max-width: 1000px) {
+    .top__title{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .product__top{
+        flex-direction: column;
+    }
+    .top__left{
+        width: 100%;
+        height: 300px;
+        margin-bottom: 10px;
+    }
+    .top__right{
+        padding: 25px;
+        width: 100%;
+        min-height: 470px;
+        margin: 0;
+    }
+    .top__description{
+        max-width: none;
+    }
+}

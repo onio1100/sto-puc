@@ -106,14 +106,15 @@ export default function Checkout(props){
         // </div>
     )
 }
-
 function ListItem(props){
+    let shortenTitle = props.product.title.length < 54 ? props.product.title : (props.product.title.slice(0,54) + "...");
+
     return(
         <li className="checkoutr__item">
             <div className="checkoutr__img--wraper">
                 <img className="checkoutr__img" src={props.product.image} alr={props.product.title} />
             </div>
-            <p className="checkoutr__title">{props.product.title}</p>
+            <p className="checkoutr__title">{shortenTitle}</p>
             <div className="checkoutr__quantity--wraper">
                 <button className="checkoutr__quantity--change" onClick={() => props.handleCart(props.product, -1)}>-</button>
                 <p className="checkoutr__quantity--display">{props.quantity}</p>
