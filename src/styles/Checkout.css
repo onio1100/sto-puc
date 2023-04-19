@@ -333,13 +333,20 @@
     .checkoutr__content{
         max-width: 570px;
         margin: 20px 0 0 0;
-        /* width: 570px; */
-        /* justify-content: flex-start; */
     }
     .checkout__left{
         width: 100%;
         border: none;
         border-top: 1px solid var(--border);
         justify-content: center;
+    }
+    .checkoutl__content{
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .checkoutr__content{
+        width: 100%;
+        margin: 0 10px;
     }
 }

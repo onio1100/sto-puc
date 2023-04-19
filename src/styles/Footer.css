@@ -96,3 +96,38 @@ footer{
         grid-template-rows: 50% 50%;
     }
 }
+@media screen and (max-width: 700px) {
+    footer{
+        height: auto;
+    }
+    .footer__wraper{
+        flex-direction: column;
+    }
+    .footer__left{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    .footer__list{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .footer__list>li{
+        margin-right: 10px;
+    }
+    .footer__center{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        align-items: flex-start;
+    }
+    .email{
+        height: 40px;
+    }
+    .footer__right{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        align-items: flex-end;
+    }
+}

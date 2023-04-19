@@ -66,3 +66,16 @@
     align-items: center;
     justify-content: center;
 }
+@media screen and (max-width: 580px) {
+    .bar__text{
+        width: 0;
+    }
+    .filters{
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    .filters__wraper{
+        margin-bottom: 10px;
+    }
+}

@@ -42,3 +42,17 @@
     font-family: 'Roboto', sans-serif;
     transition: 0.5s;
 }
+@media screen and (max-width: 900px) {
+    .benefits__bar{
+        padding: 0 10px;
+
+    }
+    .bbar{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .bbar__wraper{
+        margin: 5px 0;
+    }
+}

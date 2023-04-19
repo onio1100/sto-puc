@@ -30,5 +30,11 @@
     font-size: 16px;
     line-height: 1.6;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 730px) {
+    .ibar{
+        flex-direction: column;
+    }
+    .ibar__wraper{
+        margin-bottom: 40px;
+    }
 }
