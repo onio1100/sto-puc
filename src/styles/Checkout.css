@@ -333,12 +333,14 @@
     .checkoutr__content{
         max-width: 570px;
         margin: 20px 0 0 0;
+        padding-top: 20px;
     }
     .checkout__left{
         width: 100%;
         border: none;
         border-top: 1px solid var(--border);
         justify-content: center;
+        margin-bottom: 30px;
     }
     .checkoutl__content{
         margin-right: 10px;
