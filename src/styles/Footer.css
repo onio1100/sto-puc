@@ -131,3 +131,22 @@ footer{
         align-items: flex-end;
     }
 }
+@media screen and (max-width: 350px) {
+    .footer__list{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__list>li{
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .email__input{
+        width: 250px;
+    }
+    .footer__right{
+        align-items: flex-start;
+    }
+}
