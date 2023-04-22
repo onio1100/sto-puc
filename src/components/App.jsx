@@ -61,9 +61,3 @@ export default function App() {
     </div>
   )
 }
-
-// <main>
-//         {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : 
-//         <ProductsGrid productList={items} handleCart={cartControler} />}
-//       </main>
-//       <Footer />
