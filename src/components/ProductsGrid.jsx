@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import "../styles/ProductsGrid.css";
 import Banner from "./Banner";
 import ProductTile from "./ProductTile";
