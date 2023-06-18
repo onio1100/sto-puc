@@ -4,11 +4,12 @@ import Nav from "./Nav";
 import ProductsGrid from "./ProductsGrid";
 import Checkout from './Checkout';
 import Footer from "./Footer";
+import { Outlet } from 'react-router-dom';
 
 export default function App() {
-  const [items, setItems] = useState([]);
   const [displayCheckout, setDisplayCheckout] = useState(false);
   const [cartContent, setCartContent] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -51,13 +52,15 @@ export default function App() {
 
   return (
     <div className='app'>
-      {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : (
+      <Outlet />
+
+      {/* {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : (
         <div>
           <Nav handleCart={() => setDisplayCheckout(true)} handleLogo={() => setDisplayCheckout(false)} cartState={cartContent.length > 0}/>
           <ProductsGrid productList={items} handleCart={cartControler} />
           <Footer />
         </div>
-        )}
+        )} */}
     </div>
   )
 }

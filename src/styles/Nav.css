@@ -24,6 +24,7 @@ nav{
     font-family: 'Dosis', sans-serif;
     color: var(--detail-dark);
     cursor: pointer;
+    text-decoration: none;
 }
 .nav__cart{
     color: var(--detail-dark);

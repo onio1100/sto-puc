@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Checkout.css"
 export default function Checkout(props){
     return(
@@ -5,7 +6,7 @@ export default function Checkout(props){
 
             <div className="checkout__left">
                 <div className="checkoutl__content">
-                    <h1 className="checkoutl__logo" onClick={props.handle}>STO-PUC</h1>
+                    <Link to="/home/products" className="checkoutl__logo">STO-PUC</Link>
                     <div className="checkoutl__form">
                         
                         <label className="checkoutl__form--label">Contact</label>
@@ -53,10 +54,10 @@ export default function Checkout(props){
                         <input  className="checkoutl__form--input" type="tel" placeholder="Phone number"/>
 
                         <div className="checkoutl__buttons">
-                            <div className="checkoutl__buttons--wraper" onClick={props.handle}>
+                            <Link to="/home/products" className="checkoutl__buttons--wraper">
                                 <span className="checkoutl__buttons--icon material-symbols-outlined">arrow_back_ios</span>
                                 <p className="checkoutl__buttons--text">Return to shop</p>
-                            </div>
+                            </Link>
                             <button className="checkoutl__buttons--button">Continue to payment</button>
                         </div>
 
@@ -67,11 +68,11 @@ export default function Checkout(props){
             <div className="checkout__right">
                 <div className="checkoutr__content">
                     <ul className="checkoutr__list">
-                        {
+                        {/* {
                             props.cart.map((cartItem) => (
                                 <ListItem key={cartItem.product.id} product={cartItem.product} quantity={cartItem.quantity} handleCart={props.handleCart}/>
                             ))
-                        }
+                        } */}
                     </ul>
                     <div className="checkoutr__discout--wraper">
                         <label className="checkoutr__discout--label">Gift cardor discount code</label>
@@ -80,7 +81,7 @@ export default function Checkout(props){
                     </div>
                     <div className="checkoutr__subtotal--wraper">
                         <p className="checkoutr__subtotal--text">Subtotal</p>
-                        <p className="checkoutr__subtotal--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p>
+                        {/* <p className="checkoutr__subtotal--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p> */}
                     </div>
                     <div className="checkoutr__shipping--wraper">
                         <p className="checkoutr__shipping--text">Shipping</p>
@@ -88,7 +89,7 @@ export default function Checkout(props){
                     </div>
                     <div className="checkoutr__total--wraper">
                         <p className="checkoutr__total--text">Total</p>
-                        <p className="checkoutr__total--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p>
+                        {/* <p className="checkoutr__total--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p> */}
                     </div>
                 </div>
             </div>
