@@ -6,6 +6,7 @@ import ProductPage from "./ProductPage";
 import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
 import InfoBar from "./InfoBar";
+import { useItems } from "./App";
 
 export default function ProductsGrid(props) {
     const [filters, setFilters] = useState({
@@ -23,7 +24,7 @@ export default function ProductsGrid(props) {
     }
 
     function createProductGrid() {
-        let productList = [...props.productList];
+         let productList = [...useItems()];
         let categoryFilter = filters.category;
         let sortingCriteria = filters.sorting[0];
         let sortingOrder = filters.sorting[1];
@@ -98,7 +99,7 @@ export default function ProductsGrid(props) {
                     
                 </div>
                 <div className="grid" id="grid">
-                    {/* {createProductGrid()} */}
+                    {createProductGrid()}
                 </div>
                 <SmallBanner />
                 <InfoBar />

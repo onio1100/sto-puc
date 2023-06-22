@@ -1,10 +1,16 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import "../styles/App.css";
 import Nav from "./Nav";
 import ProductsGrid from "./ProductsGrid";
 import Checkout from './Checkout';
 import Footer from "./Footer";
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+
+const ItemsContext = createContext();
+
+export function useItems() {
+  return useContext(ItemsContext);
+}
 
 export default function App() {
   const [displayCheckout, setDisplayCheckout] = useState(false);
@@ -16,6 +22,7 @@ export default function App() {
     .then(res=>res.json())
     .then(json=> {setItems(json)}) 
   },[])
+
 
   function cartControler(product, quantity = 1, remove = false ){
     let productId = product.id;
@@ -52,8 +59,13 @@ export default function App() {
 
   return (
     <div className='app'>
-      <Outlet />
-
+      <ItemsContext.Provider value={items} >
+        <Outlet />
+        <Navigate to="/home/products" />
+      </ItemsContext.Provider>
+    {/* <Routes>
+      <Route path="/" element={} />
+    </Routes> */}
       {/* {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : (
         <div>
           <Nav handleCart={() => setDisplayCheckout(true)} handleLogo={() => setDisplayCheckout(false)} cartState={cartContent.length > 0}/>

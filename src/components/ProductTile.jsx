@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import "../styles/ProductTile.css";
 export default function ProductTile(props){
     return(
-        <div className="tile" onClick={() => {props.handleProductPage(props.product)}}>
+        <Link className="tile" to={`/home/products/${props.product.id}`} state={props.product.id}>
             <img className="tile__img" src={props.product.image} alt={props.product.title}/>
             <p className="tile__title">{props.product.title}</p>
             <div className="tile__wraper">
@@ -9,7 +10,7 @@ export default function ProductTile(props){
                 <p className="tile__reviews">{props.product.rating.rate} ({props.product.rating.count})</p>
             </div>
             <p className="tile__price">{props.product.price}$</p>
-        </div>
+        </Link>
     )
     
 }

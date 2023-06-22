@@ -3,10 +3,26 @@ import "../styles/ProductPage.css";
 import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
 import InfoBar from "./InfoBar";
-import { Link } from "react-router-dom";
-export default function ProductPage(props){
+import { Link, useLoaderData, useLocation } from "react-router-dom";
+import { useItems } from "./App";
+
+function getProduct(productId){
+    const products = useItems();
+    return products.find((product) => product.id === productId)
+}
+
+export async function loader({ params }) {
+    console.log(params);
+    const product = await getProduct(params.productId);
+    return { product };
+  }
+
+export default function ProductPage(){
     const [quantity, setQuantity] = useState(1);
     
+    const product = getProduct(useLocation().state);
+    // console.log(useLocation());
+
     useEffect(() => {
         window.scrollTo({
             top: 0,
@@ -28,16 +44,16 @@ export default function ProductPage(props){
             </Link>
             <div className="product__top">
                 <div className="top__left">
-                    {/* <img src={props.product.image} alt={props.product.title} className="top__img" /> */}
+                    <img src={product.image} alt={product.title} className="top__img" />
                 </div>
                 <div className="top__right">
-                    {/* <h1 className="top__title">{props.product.title}</h1> */}
-                    {/* <p className="top__price">{props.product.price}$</p> */}
+                    <h1 className="top__title">{product.title}</h1>
+                    <p className="top__price">{product.price}$</p>
                     <div className="top__rating">
                         <span className="rating__star material-symbols-outlined">star</span>
-                        {/* <p className="rating__value">{props.product.rating.rate} ({props.product.rating.count})</p> */}
+                        <p className="rating__value">{product.rating.rate} ({product.rating.count})</p>
                     </div>
-                    {/* <p className="top__description">{props.product.description}</p> */}
+                    <p className="top__description">{product.description}</p>
                     <ul className="top__characteristics">
                         <li className="characteristics__wraper">
                             <span className="material-symbols-outlined characteristics__icon" >recycling</span>
