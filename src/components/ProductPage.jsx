@@ -4,7 +4,7 @@ import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
 import InfoBar from "./InfoBar";
 import { Link, useLoaderData, useLocation } from "react-router-dom";
-import { useItems } from "./App";
+import { useCartControler, useItems } from "./App";
 
 function getProduct(productId){
     const products = useItems();
@@ -21,6 +21,7 @@ export default function ProductPage(){
     const [quantity, setQuantity] = useState(1);
     
     const product = getProduct(useLocation().state);
+    const addToCart = useCartControler();
     // console.log(useLocation());
 
     useEffect(() => {
@@ -73,7 +74,7 @@ export default function ProductPage(){
                         <p className="top__quantity--display">{quantity}</p>
                         <button className="top__quantity--button" onClick={changeQuantity}>+</button>
                     </div>
-                    {/* <button className="top__add-to-cart" onClick={() => props.handleCart(props.product, quantity)}>ADD TO CART</button> */}
+                    <button className="top__add-to-cart" onClick={() => addToCart(product, quantity)}>ADD TO CART</button>
                 </div>
             </div>
 

@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import "../styles/Checkout.css"
-export default function Checkout(props){
+import { useCart, useCartControler } from "./App";
+export default function Checkout(){
+
+    const cart = useCart();
+    const updateCart = useCartControler();
+
     return(
         <div className="checkout">
 
@@ -68,11 +73,11 @@ export default function Checkout(props){
             <div className="checkout__right">
                 <div className="checkoutr__content">
                     <ul className="checkoutr__list">
-                        {/* {
-                            props.cart.map((cartItem) => (
-                                <ListItem key={cartItem.product.id} product={cartItem.product} quantity={cartItem.quantity} handleCart={props.handleCart}/>
+                        {
+                            cart.map((cartItem) => (
+                                <ListItem key={cartItem.product.id} product={cartItem.product} quantity={cartItem.quantity} handleCart={updateCart}/>
                             ))
-                        } */}
+                        }
                     </ul>
                     <div className="checkoutr__discout--wraper">
                         <label className="checkoutr__discout--label">Gift cardor discount code</label>
@@ -81,7 +86,7 @@ export default function Checkout(props){
                     </div>
                     <div className="checkoutr__subtotal--wraper">
                         <p className="checkoutr__subtotal--text">Subtotal</p>
-                        {/* <p className="checkoutr__subtotal--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p> */}
+                        <p className="checkoutr__subtotal--value">{cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p>
                     </div>
                     <div className="checkoutr__shipping--wraper">
                         <p className="checkoutr__shipping--text">Shipping</p>
@@ -89,7 +94,7 @@ export default function Checkout(props){
                     </div>
                     <div className="checkoutr__total--wraper">
                         <p className="checkoutr__total--text">Total</p>
-                        {/* <p className="checkoutr__total--value">{props.cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p> */}
+                        <p className="checkoutr__total--value">{cart.reduce((acumulator, cartItem) => (acumulator += cartItem.quantity * cartItem.product.price),0).toFixed(2)}$</p>
                     </div>
                 </div>
             </div>

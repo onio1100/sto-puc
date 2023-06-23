@@ -7,13 +7,22 @@ import Footer from "./Footer";
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 
 const ItemsContext = createContext();
+const CartContext = createContext();
+const CartControlerContext = createContext();
 
 export function useItems() {
   return useContext(ItemsContext);
 }
 
+export function useCart() {
+  return useContext(CartContext);
+}
+
+export function useCartControler(){
+  return useContext(CartControlerContext);
+}
+
 export default function App() {
-  const [displayCheckout, setDisplayCheckout] = useState(false);
   const [cartContent, setCartContent] = useState([]);
   const [items, setItems] = useState([]);
 
@@ -60,8 +69,12 @@ export default function App() {
   return (
     <div className='app'>
       <ItemsContext.Provider value={items} >
-        <Outlet />
-        <Navigate to="/home/products" />
+        <CartContext.Provider value={cartContent} >
+          <CartControlerContext.Provider value={cartControler}>
+            <Outlet />
+            <Navigate to="/home/products" />
+          </CartControlerContext.Provider>
+        </CartContext.Provider>
       </ItemsContext.Provider>
     {/* <Routes>
       <Route path="/" element={} />

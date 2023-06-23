@@ -8,6 +8,7 @@
     font-family: 'Roboto', sans-serif;
     color: var(--detail-dark);
     cursor: pointer;
+    text-decoration: none;
 }
 .tile__img{
     width: 280px;
