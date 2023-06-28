@@ -6,8 +6,8 @@ export default function Nav() {
     return(
         <nav>
             <div className="nav__wraper">
-                <Link to="/home/products" className="nav__logo">STO-PUC</Link>
-                <Link to="/checkout">
+                <Link to="/sto-puc/home/products" className="nav__logo">STO-PUC</Link>
+                <Link to="/sto-puc/checkout">
                     <span className={"material-symbols-outlined nav__cart " + (cartState ? "nav__cart--on" : "")} >shopping_cart</span>
                 </Link>
             </div>

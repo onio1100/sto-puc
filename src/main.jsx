@@ -8,15 +8,11 @@ import Checkout from './components/Checkout'
 import ProductPage from './components/ProductPage'
 import Home from './components/Home'
 import ProductsGrid from './components/ProductsGrid'
-import { loader as productPageLoader} from "./components/ProductPage"
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/sto-puc/",
     element: <App />,
-    // loader: () => {
-    //   return redirect("/home/products");
-    // },
     errorElement: <ErrorPage />,
     children: [
       {
@@ -34,7 +30,6 @@ const router = createBrowserRouter([
           {
             path: "products/:productId",
             element: <ProductPage />,
-            // loader: productPageLoader(),
           }
         ]
       }

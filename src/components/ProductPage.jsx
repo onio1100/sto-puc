@@ -3,26 +3,19 @@ import "../styles/ProductPage.css";
 import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
 import InfoBar from "./InfoBar";
-import { Link, useLoaderData, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCartControler, useItems } from "./App";
-
-function getProduct(productId){
-    const products = useItems();
-    return products.find((product) => product.id === productId)
-}
-
-export async function loader({ params }) {
-    console.log(params);
-    const product = await getProduct(params.productId);
-    return { product };
-  }
 
 export default function ProductPage(){
     const [quantity, setQuantity] = useState(1);
     
     const product = getProduct(useLocation().state);
     const addToCart = useCartControler();
-    // console.log(useLocation());
+
+    function getProduct(productId){
+        const products = useItems();
+        return products.find((product) => product.id === productId)
+    }
 
     useEffect(() => {
         window.scrollTo({
@@ -40,7 +33,7 @@ export default function ProductPage(){
 
     return(
         <div className="product">
-            <Link to="/home/products" className="product__back--wraper"> 
+            <Link to="/sto-puc/home/products" className="product__back--wraper"> 
                 <span className="material-symbols-outlined product__back--arrow">arrow_back</span>
             </Link>
             <div className="product__top">

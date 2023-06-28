@@ -11,7 +11,7 @@ export default function Checkout(){
 
             <div className="checkout__left">
                 <div className="checkoutl__content">
-                    <Link to="/home/products" className="checkoutl__logo">STO-PUC</Link>
+                    <Link to="/sto-puc/home/products" className="checkoutl__logo">STO-PUC</Link>
                     <div className="checkoutl__form">
                         
                         <label className="checkoutl__form--label">Contact</label>
@@ -59,7 +59,7 @@ export default function Checkout(){
                         <input  className="checkoutl__form--input" type="tel" placeholder="Phone number"/>
 
                         <div className="checkoutl__buttons">
-                            <Link to="/home/products" className="checkoutl__buttons--wraper">
+                            <Link to="/sto-puc/home/products" className="checkoutl__buttons--wraper">
                                 <span className="checkoutl__buttons--icon material-symbols-outlined">arrow_back_ios</span>
                                 <p className="checkoutl__buttons--text">Return to shop</p>
                             </Link>

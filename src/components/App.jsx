@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import ProductsGrid from "./ProductsGrid";
 import Checkout from './Checkout';
 import Footer from "./Footer";
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes, useOutlet } from 'react-router-dom';
 
 const ItemsContext = createContext();
 const CartContext = createContext();
@@ -25,13 +25,14 @@ export function useCartControler(){
 export default function App() {
   const [cartContent, setCartContent] = useState([]);
   const [items, setItems] = useState([]);
+  const isOutlet = useOutlet();
+  
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
     .then(res=>res.json())
     .then(json=> {setItems(json)}) 
   },[])
-
 
   function cartControler(product, quantity = 1, remove = false ){
     let productId = product.id;
@@ -72,7 +73,7 @@ export default function App() {
         <CartContext.Provider value={cartContent} >
           <CartControlerContext.Provider value={cartControler}>
             <Outlet />
-            <Navigate to="/home/products" />
+            {isOutlet ? "" : <Navigate to="/sto-puc/home/products" /> }
           </CartControlerContext.Provider>
         </CartContext.Provider>
       </ItemsContext.Provider>

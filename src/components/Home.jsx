@@ -1,13 +1,15 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useOutlet } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
 export default function Home(){
+    const isOutlet = useOutlet();
+
     return(
         <div>
             <Nav />
                 <Outlet />
-                {/* <Navigate to="/home/products" /> */}
+                {isOutlet ? "" : <Navigate to="/sto-puc/home/products" /> }
             <Footer />
         </div>
     )

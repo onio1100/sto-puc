@@ -5,7 +5,7 @@ export default function ErrorPage(){
         <div className="error" >
             <h1>Error: 404</h1>
             <h3>Page not found</h3>
-            <Link to={"/home/products"} className="button">return to home page</Link>
+            <Link to={"/sto-puc/home/products"} className="button">return to home page</Link>
         </div>
     )
 }
