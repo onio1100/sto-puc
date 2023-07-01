@@ -2,12 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App'
 import './index.css'
-import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter, redirect, useRouteError } from 'react-router-dom'
 import ErrorPage from './components/ErrorPage'
 import Checkout from './components/Checkout'
 import ProductPage from './components/ProductPage'
 import Home from './components/Home'
 import ProductsGrid from './components/ProductsGrid'
+import { loader as productLoader} from "./components/ProductPage";
+
 
 const router = createBrowserRouter([
   {
@@ -30,8 +32,13 @@ const router = createBrowserRouter([
           {
             path: "products/:productId",
             element: <ProductPage />,
+            loader: productLoader,
           }
         ]
+      },
+      {
+        path: "*",
+        element: <ErrorPage />
       }
     ]
   }

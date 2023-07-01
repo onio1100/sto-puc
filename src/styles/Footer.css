@@ -88,6 +88,14 @@ footer{
 .footer__copyright{
     font-size: 11px;
 }
+.footer__copyright--link{
+    color: var(--detail-dark);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.footer__copyright--link:hover{
+    color: #e9e3db;
+}
 @media screen and (max-width: 1100px) {
     .footer__list{
         width: 100%;

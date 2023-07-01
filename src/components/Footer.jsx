@@ -34,7 +34,7 @@ export default function Footer() {
                 <div className="footer__right">
                     <div>
                         <p className="footer__ppandtos"><a className="footer__a">Privacy Policy</a> • <a className="footer__a">Terms of Service</a></p>
-                        <p className="footer__copyright">Copyright © 2023 onio1100</p>
+                        <p className="footer__copyright">Copyright © 2023 <a href="https://github.com/onio1100" target="_blank" className="footer__copyright--link">onio1100</a></p>
                     </div>
                 </div>
             </div>    
