@@ -1,10 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import "../styles/App.css";
-import Nav from "./Nav";
-import ProductsGrid from "./ProductsGrid";
-import Checkout from './Checkout';
-import Footer from "./Footer";
-import { Navigate, Outlet, Route, Routes, useOutlet } from 'react-router-dom';
+import { Navigate, Outlet, useOutlet } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 
 const ItemsContext = createContext();
 const CartContext = createContext();
@@ -23,7 +20,7 @@ export function useCartControler(){
 }
 
 export default function App() {
-  const [cartContent, setCartContent] = useState([]);
+  const [cartContent, setCartContent] = useLocalStorage("cart", []);
   const [items, setItems] = useState([]);
   const isOutlet = useOutlet();
   
@@ -77,16 +74,6 @@ export default function App() {
           </CartControlerContext.Provider>
         </CartContext.Provider>
       </ItemsContext.Provider>
-    {/* <Routes>
-      <Route path="/" element={} />
-    </Routes> */}
-      {/* {displayCheckout ? <Checkout handle={() => setDisplayCheckout(false)} handleCart={cartControler} cart={cartContent} /> : (
-        <div>
-          <Nav handleCart={() => setDisplayCheckout(true)} handleLogo={() => setDisplayCheckout(false)} cartState={cartContent.length > 0}/>
-          <ProductsGrid productList={items} handleCart={cartControler} />
-          <Footer />
-        </div>
-        )} */}
     </div>
   )
 }

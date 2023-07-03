@@ -3,20 +3,18 @@ import "../styles/ProductPage.css";
 import BenefitsBar from "./BenefitsBar";
 import SmallBanner from "./SmallBanner";
 import InfoBar from "./InfoBar";
-import { Link, json, useLoaderData, useLocation } from "react-router-dom";
-import { useCartControler, useItems } from "./App";
+import { Link, useLoaderData } from "react-router-dom";
+import { useCartControler } from "./App";
 
 export async function loader({ params }) {
     let id = Number(params.productId);
     let response = await fetch('https://fakestoreapi.com/products/' + id);
     let product = await response.json();
-    console.log(product)
     return product;
   }
 
 export default function ProductPage(){
     const [quantity, setQuantity] = useState(1);
-    
     const product = useLoaderData();
     const addToCart = useCartControler();
 
