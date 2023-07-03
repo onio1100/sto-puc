@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './components/App'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 import ErrorPage from './components/ErrorPage'
 import Checkout from './components/Checkout'
 import ProductPage from './components/ProductPage'
@@ -11,7 +11,7 @@ import ProductsGrid from './components/ProductsGrid'
 import { loader as productLoader} from "./components/ProductPage";
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/sto-puc/",
     element: <App />,
