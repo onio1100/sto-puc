@@ -13,7 +13,7 @@ import { loader as productLoader} from "./components/ProductPage";
 
 const router = createHashRouter([
   {
-    path: "/sto-puc/",
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [

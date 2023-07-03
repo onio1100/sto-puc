@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/ProductTile.css";
 export default function ProductTile(props){
     return(
-        <Link className="tile" to={`/sto-puc/home/products/${props.product.id}`} state={props.product.id}>
+        <Link className="tile" to={`/home/products/${props.product.id}`} state={props.product.id}>
             <img className="tile__img" src={props.product.image} alt={props.product.title}/>
             <p className="tile__title">{props.product.title}</p>
             <div className="tile__wraper">

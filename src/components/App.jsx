@@ -70,7 +70,7 @@ export default function App() {
         <CartContext.Provider value={cartContent} >
           <CartControlerContext.Provider value={cartControler}>
             <Outlet />
-            {isOutlet ? "" : <Navigate to="/sto-puc/home/products" /> }
+            {isOutlet ? "" : <Navigate to="/home/products" /> }
           </CartControlerContext.Provider>
         </CartContext.Provider>
       </ItemsContext.Provider>

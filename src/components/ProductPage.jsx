@@ -34,7 +34,7 @@ export default function ProductPage(){
 
     return(
         <div className="product">
-            <Link to="/sto-puc/home/products" className="product__back--wraper"> 
+            <Link to="/home/products" className="product__back--wraper"> 
                 <span className="material-symbols-outlined product__back--arrow">arrow_back</span>
             </Link>
             <div className="product__top">

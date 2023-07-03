@@ -9,7 +9,7 @@ export default function Home(){
         <div>
             <Nav />
                 <Outlet />
-                {isOutlet ? "" : <Navigate to="/sto-puc/home/products" /> }
+                {isOutlet ? "" : <Navigate to="/home/products" /> }
             <Footer />
         </div>
     )
